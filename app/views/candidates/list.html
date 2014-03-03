@@ -1,0 +1,10 @@
+<h2>Candidates
+	<a class="btn btn-default" ui-sref="user.candidates-new">Add New</a>
+</h2>
+<table class="table table-striped">
+	<tr ng-repeat="candidate in candidates" >
+		<td>{{ candidate.firstName }}</td>
+		<td>{{ candidate.lastName }}</td>
+		<td>{{ candidate.email }}</td>
+	</tr>
+</table>

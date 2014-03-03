@@ -1,0 +1,34 @@
+<h2>New Candidate</h2>
+<form ng-submit="save()" name="loginForm" role="form" novalidate >
+	<div class="form-group" ng-class="{'has-error': submitted && loginForm.firstName.$invalid}">
+		<label for="firstName" class="control-label">First Name</label>
+		<input type="text" class="form-control" data-ng-model="newCandidate.firstName" placeholder="First Name" name="firstName" required="" autofocus="" >
+		<p class="help-block" ng-show="submitted && loginForm.firstName.$error.required">
+			The first name is required
+		</p>
+	</div>
+	<div class="form-group" ng-class="{'has-error': submitted && loginForm.lastName.$invalid}">
+		<label for="lastName" class="control-label">Last Name</label>
+		<input type="text" class="form-control" data-ng-model="newCandidate.lastName" placeholder="Last Name" name="lastName" required="" >
+		<p class="help-block" ng-show="submitted && loginForm.lastName.$error.required">
+			The last name is required
+		</p>
+	</div>
+	<div class="form-group" ng-class="{'has-error': submitted && loginForm.email.$invalid}">
+		<label for="email" class="control-label">Email</label>
+		<input type="email" class="form-control" data-ng-model="newCandidate.email" placeholder="Email" name="email" required="" rns-unique="" />
+		<p class="help-block" ng-show="submitted && loginForm.email.$error.unique">
+			This email already exist!!!
+		</p>
+		<p class="help-block" ng-show="submitted && loginForm.email.$error.required">
+			The email is required
+		</p>
+		<p class="help-block" ng-show="submitted && loginForm.email.$error.email">
+			Must be a valid email
+		</p>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-primary" >Save</button>
+		<a class="btn btn-default" ui-sref="user.candidates">Cancel</a>
+	</div>
+</form>

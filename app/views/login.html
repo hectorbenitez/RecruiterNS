@@ -1,0 +1,13 @@
+<form ng-submit="login()" name="loginForm" role="form" >
+	<div class="form-group">
+		<label for="username" class="control-label">Username</label>
+		<input type="text" class="form-control" data-ng-model="username" placeholder="Username" name="username" required="" autofocus="" >
+	</div>
+	<div class="form-group">
+		<label for="password" class="control-label">Password</label>
+		<input type="password" class="form-control" data-ng-model="password" placeholder="Password" name="password" required="" >
+	</div>
+	<div class="form-group">
+		<button data-ng-disabled="loginForm.$invalid" class="btn btn-primary" disabled="disabled" data-ng-click="login()" >Log in</button>
+	</div>
+</form>
